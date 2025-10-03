@@ -1,0 +1,111 @@
+# Dictionary comprehension
+# syntax:
+# {Expresion for temp_var in iteration}
+# expresion =  key : value pair
+
+List1 = ['Name' , 'Age' , 'Gender']
+List2 = ['Qasim' , 28 , True]
+DictionaryComprehension = {temp_var[0] : temp_var[1] for temp_var in zip(List1 , List2)}
+print(DictionaryComprehension)
+
+lst_fruits = ['APPLE' , 'BANANA' , 'CHERRY' , 'ORANGE']
+fruits_color = ['RED' , 'YELLOW' , 'RED' , 'COLOR IS ORANGE']
+dict_compre = {i[0]:i[1] for i in zip(lst_fruits , fruits_color)}
+print('Fruits --> ',dict_compre)
+
+medical_condition = ['Heart Attack' ,'Heart Attack']
+surrogate_endpoints = ['Cholestrol' , 'Blood pressure']
+
+monitoring = {risk_low[1][0] : risk_low[1] for risk_low in zip(medical_condition , surrogate_endpoints)}
+
+print(monitoring)
+print(f'This is SURROGATE ENDPOINTS --> {monitoring.values()}')
+print(monitoring.items()) #.items() method --> key value pair convert to tuple
+
+dict_com = {temp_var:temp_var**2 if (temp_var % 2 == 0 or temp_var % 2 == 1) else temp_var for temp_var in range(12)}
+print(dict_com)
+
+
+knowledge = ['set of information ---> Data --> record']
+WhatKnowledge = ['Experience' , 'Domain Knowledge Like ---> HealthCare,Education etc']
+
+dict_knowledge = {i[0]:i for i in knowledge+WhatKnowledge if i == i}
+print(dict_knowledge)
+
+dic_copmrehension = {i[0]:i for i in ['CHERRY' , 'RED']}
+print(dic_copmrehension)
+
+# Normal way..
+types_fever = ['Viral fever' , 'Malaria fever' , 'Dangue fever' , 'Bacterial fever']
+symptoms = ['Cold' , 'Cough' , 'Fatigue']
+treatment = ['Rest' , 'Maintain Water Intake' , 'Medications']
+
+fever = {}
+for i in zip(types_fever , symptoms , treatment):
+
+    fever[i[1]] = i[0]
+    fever[i[2]] = i[0]
+
+print(fever)    
+
+# Normal way  of coding..
+lst = ['knowledge' , 'data' , 'information' , 'record']
+lst1 = ['Data' , 'Record' , 'Knowledge' , 'Files']
+
+dic = {}
+for temp in zip(lst , lst1):
+
+    dic[temp[0]] = temp[1]
+
+print(dic)   
+
+# List Comprehension:
+lst_com = [temp_var for temp_var in range(12)]
+print(lst_com)
+
+lst_com = [temp for temp in range(10) if temp % 2 == 0]
+print(f'EVEN = {lst_com}')
+
+ListComprehension = [i if i % 2 == 0 else 'Odd' for i in range(13)]
+print(ListComprehension)
+
+ListComprehension = ['Even' if i % 2 == 0 else 'Odd' for i in range(12)]
+print(ListComprehension)
+
+list_comprehension = [{i**2 : 'Even'} if i % 2 == 0 else 'Odd' for i in range(12)]
+print(list_comprehension)
+
+list_comprehension = [{i**2 : 'Even'} if i % 2 == 0 else i for i in range(12)]
+print(list_comprehension)
+
+list_comprehension = [{i**2 : 'Odd'} if i % 2 == 1 else 'Even' for i in range(12)]
+print(list_comprehension)
+
+list_comprehension = [{i**2 : 'Odd'} if i % 2 == 1 else {i**2 : 'Even'} for i in range(12)]
+print(list_comprehension)
+
+list_comprehension.reverse()
+print(list_comprehension)
+
+list_comprehension = [i/12 if i == 1 else i for i in range(12)]
+print(list_comprehension)
+
+list_comprehension = [i/2 if i == i else i for i in range(12)]
+print(list_comprehension)
+
+lst = []
+for i in range(12):
+
+    if i == i:
+        lst.append(i)
+    else:
+        print('----')
+
+print(lst)        
+
+
+# Normal Way...
+lst_e = []
+for lst in range(10):
+    lst_e.append(lst)
+print(lst_e) 
